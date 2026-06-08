@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot-dataset-tools"
+version = "0.1.0"
+description = "Tested CLI tools for auditing, converting, visualizing, and benchmarking robot-learning datasets."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "RLDSbench" }]
+license = "MIT"
+keywords = [
+  "robotics",
+  "robot-learning",
+  "datasets",
+  "rlds",
+  "hdf5",
+  "lerobot",
+  "benchmarking",
+  "cli",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Quality Assurance",
+  "Typing :: Typed",
+]
+dependencies = [
+  "typer>=0.9",
+  "rich>=13",
+  "numpy>=1.23",
+  "h5py>=3.8",
+  "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+  "pytest-cov>=4",
+  "ruff>=0.8",
+  "build>=1",
+  "twine>=5",
+]
+parquet = ["pandas>=2", "pyarrow>=12"]
+benchmark = ["psutil>=5.9"]
+rlds = ["tensorflow-datasets>=4.9"]
+
+[project.scripts]
+robotds = "robot_dataset_tools.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["robot_dataset_tools*"]
+
+[tool.setuptools.package-data]
+robot_dataset_tools = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["."]
+
+[tool.coverage.run]
+branch = true
+source = ["robot_dataset_tools"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+  "pragma: no cover",
+  "if __name__ == .__main__.:",
+  "raise NotImplementedError",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+exclude = [
+  ".git",
+  ".venv",
+  "build",
+  "dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["B008", "E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

@@ -1,0 +1,83 @@
+{
+  "action_stats": {
+    "available_steps": 15,
+    "dimensionality": 3,
+    "inf_count": 0,
+    "max": [
+      5.0,
+      6.0,
+      2.0
+    ],
+    "mean": [
+      2.066666666666667,
+      3.066666666666667,
+      1.0666666666666667
+    ],
+    "min": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "nan_count": 0,
+    "shapes": {
+      "(3,)": 15
+    },
+    "std": [
+      1.5260697523012796,
+      1.5260697523012796,
+      0.7717224601860151
+    ]
+  },
+  "dataset_path": "examples/demo_hdf5.h5",
+  "detected_format": "hdf5",
+  "episode_count": 3,
+  "episode_lengths": {
+    "max": 6,
+    "mean": 5.0,
+    "median": 5.0,
+    "min": 4,
+    "p50": 5.0,
+    "p90": 5.8,
+    "p95": 5.9,
+    "p99": 5.98
+  },
+  "errors": [],
+  "field_coverage": {
+    "optional": {
+      "language_instruction": 1.0
+    },
+    "required": {
+      "action": 1.0,
+      "observation": 1.0
+    }
+  },
+  "language_instruction_coverage": {
+    "coverage_episode_fraction": 1.0,
+    "coverage_step_fraction": 1.0,
+    "empty_instructions": 0,
+    "episodes_with_instruction": 3,
+    "steps_with_instruction": 15,
+    "unique_instruction_count": 3
+  },
+  "missing_field_counts": {},
+  "observation_coverage": {
+    "proprio": 1.0,
+    "proprio.gripper": 1.0,
+    "proprio.joint_0": 1.0,
+    "state": 1.0
+  },
+  "observation_keys": [
+    "proprio",
+    "proprio.gripper",
+    "proprio.joint_0",
+    "state"
+  ],
+  "sample_episode_ids": [
+    "demo_ep_0",
+    "demo_ep_1",
+    "demo_ep_2"
+  ],
+  "schema_issues": [],
+  "step_count": 15,
+  "warnings": []
+}

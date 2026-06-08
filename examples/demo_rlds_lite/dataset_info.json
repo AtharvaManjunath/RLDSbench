@@ -1,0 +1,7 @@
+{
+  "description": "Tiny deterministic synthetic robot-learning dataset.",
+  "format": "rlds-lite",
+  "name": "robotds-demo",
+  "num_episodes": 3,
+  "version": 1
+}
